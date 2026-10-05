@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#090D16" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <title>SAZ AI Workspace</title>
+    <meta name="description" content="Multilingual personal coding and app-development assistant with persistent project memory, live code sandbox, and GitHub repository audit." />
+    <meta property="og:title" content="SAZ AI Workspace" />
+    <meta property="og:description" content="Multilingual personal coding and app-development assistant with persistent project memory, live code sandbox, and GitHub repository audit." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SAZ AI Workspace" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAZ AI Workspace" />
+    <meta name="twitter:description" content="Multilingual personal coding and app-development assistant with persistent project memory, live code sandbox, and GitHub repository audit." />
+    <script>
+      (function () {
+        // Guard against SecurityError when localStorage/sessionStorage are restricted inside a cross-origin Preview iframe
+        function createMemoryStorage() {
+          var map = {};
+          return {
+            getItem: function (k) {
+              return Object.prototype.hasOwnProperty.call(map, k) ? map[k] : null;
+            },
+            setItem: function (k, v) {
+              map[k] = String(v);
+            },
+            removeItem: function (k) {
+              delete map[k];
+            },
+            clear: function () {
+              map = {};
+            },
+            key: function (i) {
+              var keys = Object.keys(map);
+              return keys[i] || null;
+            },
+            get length() {
+              return Object.keys(map).length;
+            }
+          };
+        }
+        try {
+          var ls = window.localStorage;
+          ls.setItem('__saz_probe__', '1');
+          ls.removeItem('__saz_probe__');
+        } catch (_err) {
+          try {
+            Object.defineProperty(window, 'localStorage', {
+              value: createMemoryStorage(),
+              configurable: true,
+              writable: true
+            });
+          } catch (_e2) {}
+        }
+        try {
+          var ss = window.sessionStorage;
+          ss.setItem('__saz_probe__', '1');
+          ss.removeItem('__saz_probe__');
+        } catch (_err) {
+          try {
+            Object.defineProperty(window, 'sessionStorage', {
+              value: createMemoryStorage(),
+              configurable: true,
+              writable: true
+            });
+          } catch (_e2) {}
+        }
+        // Unregister any stale service workers that could intercept Vite modules in Preview
+        try {
+          if ('serviceWorker' in navigator && navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+            navigator.serviceWorker.getRegistrations().then(function (regs) {
+              for (var i = 0; i < regs.length; i++) {
+                regs[i].unregister();
+              }
+            }).catch(function () {});
+          }
+        } catch (_swErr) {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SAZ AI Workspace",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "description": "Multilingual personal coding and app-development assistant with persistent project memory, live code sandbox, and GitHub repository audit.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+{
+  "appId": "com.sazai.workspace",
+  "appName": "SAZ AI",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true,
+    "allowNavigation": [
+      "*.run.app",
+      "*.googleapis.com",
+      "*.firebaseapp.com",
+      "*.web.app",
+      "github.com",
+      "*.github.com",
+      "localhost",
+      "10.0.2.2"
+    ]
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true,
+    "backgroundColor": "#090D16"
+  },
+  "plugins": {
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#090D16",
+      "overlaysWebView": false
+    }
+  }
+}

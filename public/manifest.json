@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "SAZ AI Workspace",
+  "short_name": "SAZ AI",
+  "description": "Multilingual AI coding assistant, 3D character conversation studio, Urdu/English voice synthesizer, and video production platform.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090D16",
+  "theme_color": "#090D16",
+  "categories": ["developer", "productivity", "multimedia", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

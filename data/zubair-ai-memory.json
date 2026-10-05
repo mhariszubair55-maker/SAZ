@@ -1,0 +1,30 @@
+{
+  "nextIds": {
+    "project": 2,
+    "knowledge": 2,
+    "conversation": 2,
+    "message": 2
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "SAZ AI Studio Suite",
+      "idea": "End-to-end AI Execution Engine with Native Playable 3D WebGL / Three.js Games, 5-Scene 9:16 VideoStudio, ImageStudio, AudioStudio, and multimodal file intelligence.",
+      "progress": "Active: Native Three.js WebGL 3D Game Engine + 5-Scene 9:16 VideoStudio Timeline ready.",
+      "status": "active",
+      "createdAt": "2026-09-28T23:00:00.000Z",
+      "updatedAt": "2026-09-28T23:00:00.000Z"
+    }
+  ],
+  "knowledgeDocuments": [],
+  "conversations": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "title": "SAZ AI Execution Session",
+      "createdAt": "2026-09-28T23:00:00.000Z",
+      "updatedAt": "2026-09-28T23:00:00.000Z"
+    }
+  ],
+  "conversationMessages": []
+}

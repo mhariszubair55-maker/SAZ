@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SAZ AI</string>
+    <string name="title_activity_main">SAZ AI Workspace</string>
+    <string name="package_name">com.sazai.workspace</string>
+    <string name="custom_url_scheme">com.sazai.workspace</string>
+</resources>
